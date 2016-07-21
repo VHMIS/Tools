@@ -36,3 +36,25 @@ foreach ($data as $pro => $data1) {
 foreach($data as $id => $content) {
     file_put_contents('fa_' . $id . '.json', json_encode($content));
 }
+
+
+/*
+<?php
+
+define('PHPEXCEL_ROOT', '/WebServer/PHPExcel/Classes/');
+include PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php';
+
+$objReader = \PHPExcel_IOFactory::createReader('Excel5');
+$objPHPExcel = $objReader->load('dm_c.xls');
+$objPHPExcel->setActiveSheetIndex(0);
+
+$data = [];
+for ($i = 2; $i <= 531; $i++) {
+    $code = $objPHPExcel->getActiveSheet()->getCell('A' . $i)->getValue();
+    $name = $objPHPExcel->getActiveSheet()->getCell('B' . $i)->getValue();
+    
+    $data[$code] = $name;
+}
+
+file_put_contents('college.json', json_encode($data));
+*/
